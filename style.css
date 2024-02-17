@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --SoftMagenta: hsl(300, 69%, 71%);
+
+  --font1: "Poppins", sans-serif;
+  --font2: "Open Sans", sans-serif;
+}
+
+body {
+  background: url(images/bg-desktop.svg);
+  background-size: cover;
+  background-color: var(--Violet);
+  color: white;
+}
+
+/* Header - Section */
+
+.header-section {
+  max-width: 100%;
+  padding-block: 3em 2em;
+  padding-inline: 2em 3em;
+}
+
+.header-section > a > img {
+  width: clamp(10em, 30%, 18em);
+}
+
+/* First - Section */
+
+.landing-page-section {
+  padding-block: 3em;
+  padding-inline: 3em;
+}
+
+.landing-page-section-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3em;
+}
+
+.landing-page-section-container > img {
+  width: clamp(50%, 100%, 70%);
+  height: clamp(50%, 100%, 70%);
+}
+
+/* Detail Section */
+
+.landing-page-detail-container {
+  margin: 3em 1em 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.landing-page-detail-container > h1 {
+  font-family: var(--font1);
+  font-size: clamp(1.5em, 4vw, 3em);
+  font-weight: 600;
+}
+
+.landing-page-detail-container > p {
+  font-family: var(--font2);
+}
+
+.landing-page-detail-container > button {
+  width: max-content;
+  /* padding: 1em 5em; */
+  width: max(100px, 200px);
+  height: max(50px, 50px);
+  font-family: var(--font2);
+  color: var(--Violet);
+  background-color: white;
+  border-radius: 40px;
+  border: none;
+  font-size: clamp(1.2em, 2vw, 1.2em);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.318);
+}
+
+.landing-page-detail-container > button:hover {
+  background-color: var(--SoftMagenta);
+  color: white;
+}
+
+/* Footer - Section */
+
+.footer-section {
+  padding-block: 2em;
+  padding-inline: 3em;
+}
+
+.social-media-cont {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+}
+
+.social-media-cont > a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border: 1px solid;
+  color: white;
+}
+
+.fa-brands {
+  font-size: 1.5em;
+}
+
+.social-media-cont > a:hover {
+  color: var(--SoftMagenta);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1024px) {
+  .landing-page-section-container {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landing-page-detail-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .landing-page-section-container > img {
+    width: clamp(80%, 100%, 80%);
+    height: clamp(80%, 100%, 80%);
+  }
+
+  .landing-page-detail-container > h1 {
+    font-family: var(--font1);
+    font-size: clamp(2em, 4.5vw, 3em);
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .landing-page-detail-container > p {
+    font-size: clamp(1em, 2vw, 1.1em);
+    text-align: center;
+  }
+
+  .landing-page-detail-container > button {
+    width: 400px;
+    height: 50px;
+  }
+
+  .social-media-cont {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-section {
+    padding-block: 3em 1em;
+  }
+
+  .landing-page-section {
+    padding-block: 2em;
+    padding-inline: 3em;
+  }
+
+  .landing-page-section-container > img {
+    width: clamp(80%, 100%, 80%);
+    height: clamp(80%, 100%, 80%);
+  }
+
+  .social-media-cont > a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fa-brands {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    height: 100dvh;
+    background: url(images/bg-mobile.svg) no-repeat;
+    background-size: 100%;
+    background-color: var(--Violet);
+    color: white;
+  }
+
+  .landing-page-section {
+    padding-block: 2em;
+    padding-inline: 2em;
+  }
+
+  .landing-page-section-container > img {
+    width: 100%;
+  }
+
+  .landing-page-detail-container {
+    margin: 3em 0em 1em;
+    padding: 0;
+  }
+
+  .landing-page-detail-container > button {
+    width: 250px;
+    font-size: 1em;
+    height: 50px;
+  }
+}
